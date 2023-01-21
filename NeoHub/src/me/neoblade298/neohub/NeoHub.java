@@ -21,8 +21,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
-import me.neoblade298.neocore.NeoCore;
-import me.neoblade298.neocore.exceptions.NeoIOException;
+import me.neoblade298.neocore.bukkit.NeoCore;
+import me.neoblade298.neocore.shared.exceptions.NeoIOException;
 import me.neoblade298.neocore.util.Util;
 
 public class NeoHub extends JavaPlugin implements Listener {
