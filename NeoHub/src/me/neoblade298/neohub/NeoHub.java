@@ -23,8 +23,6 @@ import org.bukkit.potion.PotionEffectType;
 
 import me.neoblade298.neocore.bukkit.NeoCore;
 import me.neoblade298.neocore.bukkit.util.Util;
-import me.neoblade298.neocore.shared.exceptions.NeoIOException;
-
 
 public class NeoHub extends JavaPlugin implements Listener {
 	private static NeoHub inst;
@@ -51,13 +49,9 @@ public class NeoHub extends JavaPlugin implements Listener {
 	}
 	
 	private void reload() {
-		try {
-			NeoCore.loadFiles(new File(getDataFolder(), "config.yml"), (cfg, yml) -> {
-				spawn = Util.stringToLoc(cfg.getString("spawn"));
-			});
-		} catch (NeoIOException e) {
-			e.printStackTrace();
-		}
+		NeoCore.loadFiles(new File(getDataFolder(), "config.yml"), (cfg, yml) -> {
+			spawn = Util.stringToLoc(cfg.getString("spawn"));
+		});
 	}
 	
 	public void onDisable() {
